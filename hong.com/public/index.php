@@ -6,7 +6,8 @@ use Phalcon\Mvc\View;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Mvc\Application;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
-
+use Phalcon\Mvc\Router;
+use Phalcon\Mvc\Router\Group as RouterGroup;
 
 // Define some absolute path constants to aid in locating resources
 define('BASE_PATH', dirname(__DIR__));
@@ -37,15 +38,6 @@ $di->set(
     }
 );
 
-// Setup a base URI
-$di->set(
-    'url',
-    function () {
-        $url = new UrlProvider();
-        $url->setBaseUri('/');
-        return $url;
-    }
-);
 
 // Setup the database service
 $di->set(
@@ -62,6 +54,32 @@ $di->set(
     }
 );
 
+$di['router'] = function () {
+    // Use the annotations router. We're passing false as we don't want the router to add its default patterns
+    $router = new Router();
+
+    // Setting a specific default
+    $router->removeExtraSlashes(true);
+
+    // Using an array
+    $router->setDefaults(
+        [
+            'controller' => 'index',
+            'action'     => 'index',
+        ]
+    );
+
+    $router->add(
+        '/signup',
+        [
+            'controller' => 'index',
+            'action'     => 'test',
+        ]
+    );
+
+
+    return $router;
+};
 
 
 $application = new Application($di);

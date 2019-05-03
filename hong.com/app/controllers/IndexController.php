@@ -8,4 +8,7 @@ class IndexController extends Controller
     {
         
     }
+    public function testAction(){
+        echo 'qwdwqd';die;
+    }
 }

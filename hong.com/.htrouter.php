@@ -25,6 +25,7 @@ if ($uri !== '/' && file_exists(__DIR__ . '/public' . $uri)) {
     return false;
 }
 
+
 $_GET['_url'] = $_SERVER['REQUEST_URI'];
 
 require_once __DIR__ . '/public/index.php';
