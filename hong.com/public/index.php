@@ -1,5 +1,4 @@
 <?php
-
 use Phalcon\Loader;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\View;
@@ -54,32 +53,6 @@ $di->set(
     }
 );
 
-$di['router'] = function () {
-    // Use the annotations router. We're passing false as we don't want the router to add its default patterns
-    $router = new Router();
-
-    // Setting a specific default
-    $router->removeExtraSlashes(true);
-
-    // Using an array
-    $router->setDefaults(
-        [
-            'controller' => 'index',
-            'action'     => 'index',
-        ]
-    );
-
-    $router->add(
-        '/signup',
-        [
-            'controller' => 'index',
-            'action'     => 'test',
-        ]
-    );
-
-
-    return $router;
-};
 
 
 $application = new Application($di);

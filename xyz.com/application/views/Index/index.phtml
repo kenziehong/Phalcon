@@ -1,0 +1,50 @@
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+</script>
+
+
+
+<?php
+echo "<h1>Row 1</h1>";
+echo "<h1>Row 2</h1>";
+
+// echo $this->tag->linkTo(
+//     'show',
+//     'Button'
+// ); 
+?>
+
+
+<button type="button">Click Me</button>
+<p></p>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("button").click(function(){
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://xyz.com/test1api',
+                dataType: 'json',
+                error: function(er) {
+                    console.log(er);
+                },
+                success: function(data) {
+                    // console.table(data);                    
+                    var userInfo = $('#user-info');
+                    Object.values(data).forEach(function(value) {
+                        userInfo.append('<li>'+value+'</li>');
+                    })             
+                    userInfo.append(JSON.stringify(data));
+                }
+            });
+   });
+});
+</script>
+
+
+
+<?php
+echo '<ul id="user-info"></ul>';
+?>
