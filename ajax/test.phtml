@@ -1,0 +1,72 @@
+<html>
+    <title>Basic Ajax Demo</title>
+    
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
+        <script>
+
+            //đảm bảo rằng trang của chúng ta đã load hết nên chúng ta đặt code bên trong hàm này
+            $(document).ready(function () {
+
+                //tạo một event click chuột vào button view more, vậy khi button view more được click thì chúng ta sẽ xử lý cái gì?
+                jQuery("#btn").click(function(){
+
+                    //Khai báo 1 biến có nội dung là “This is first demo”
+                    var data_test = 'This is first demo';
+
+                    //Sử dụng hàm ajax để gửi biến ấy sang cho file php xử lý, trong hàm này cần các tham số như:
+                    $.ajax({
+                        url: 'controller.php',               //nơi sẽ xử lý dữ liệu.
+                        type: 'POST',                        //phương thức đẩy dữ liệu đi (POST hoặc GET) 
+                        data: 'string=' + data_test,         //dữ liệu nào sẽ được đẩy sang, ở đây chúng ta đấy biến data_test sang và cần gán nó vào 1 tham số string để sang bên php chúng ta có thể lấy giá trị string
+                        
+                        //Hàm success sẽ thực hiện khi chúng ta thực hiện thành công. Ở đây nếu thành công chúng ta hẹn giờ 3s để nó set content cho thẻ có id là #demo-ajax
+                        success: function (data) {
+                            setTimeout(function(){
+                                $('#demo-ajax').html(data);
+                            }, 3000);
+                        },
+                        
+                        //Hàm error sẽ thực hiện khi công việc thất bại. ở đây chúng ta đơn giản chỉ console.log ra thôi, cái này bạn phải nhấn F12 mới thấy được.
+                        error: function (e) {
+                            console.log(e.message);
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="demo-ajax">
+        </div>
+
+        <button id="btn">View more</button>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $("button").click(function(){
+                    $.ajax({
+                    type: "POST",
+                    url: "http:xyz.com/test1api",
+                    dataType: "json",
+                    error: function(er){
+                        console.log(er);
+                    },
+                    success: function(data){
+                        console.table(data);
+                        var userInfo = $("#user-info");
+                        Object.values(data).forEach(function(value){
+                            userInfo.append("<li>"+value+"</li>");
+                        })
+                        userInfo.append(JSON.stringify(data));
+                    }
+                    });
+                });
+            });
+
+        </script>
+
+    </body>
+</html>

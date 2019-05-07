@@ -1,0 +1,101 @@
+The XML DOM is a standard for how to get, change, add, or delete XML elements.
+
+----------------------------------------------------------------------
+This example changes the value of an HTML element with id="demo":
+
+<h1 id="demo">This is a Heading</h1>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello World!";
+</script>
+
+------------------------------------------------
+This example changes the value of the first <h1> element in an HTML document:
+Note: Even if the HTML document contains only ONE <h1> element you still have to specify the array index [0], 
+because the getElementsByTagName() method always returns an array.    
+
+<h1>This is a Heading</h1>
+
+<h1>This is a Heading</h1>
+
+<script>
+document.getElementsByTagName("h1")[0].innerHTML = "Hello World!";
+</script>    
+
+----------------------------------------------------------------------
+This code retrieves the text value of the first <title> element in an XML document:
+ 
+txt = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+
+xmlDoc - the XML DOM object created by the parser.
+getElementsByTagName("title")[0] - get the first <title> element
+childNodes[0] - the first child of the <title> element (the text node)
+nodeValue - the value of the node (the text itself)
+
+
+----------------------------------------------------------------------
+XML DOM Properties
+These are some typical DOM properties:
+
+x.nodeName - the name of x
+x.nodeValue - the value of x
+x.parentNode - the parent node of x
+x.childNodes - the child nodes of x
+x.attributes - the attributes nodes of x
+Note: In the list above, x is a node object.
+
+----------------------------------------------------------------------
+XML DOM Methods
+x.getElementsByTagName(name) - get all elements with a specified tag name
+x.appendChild(node) - insert a child node to x
+x.removeChild(node) - remove a child node from x
+Note: In the list above, x is a node object.
+
+
+----------------------------------------------------------------------
+According to the XML DOM, everything in an XML document is a node:
+
+The entire document is a document node
+Every XML element is an element node
+The text in the XML elements are text nodes
+Every attribute is an attribute node
+Comments are comment nodes
+
+
+----------------------------------------------------------------
+Text is Always Stored in Text Nodes
+A common error in DOM processing is to expect an element node to contain text.
+
+However, the text of an element node is stored in a text node.
+
+In this example: <year>2005</year>, the element node <year> holds a text node with the value "2005".
+
+"2005" is not the value of the <year> element!
+
+
+-------------------------------------------------------
+Node Parents, Children, and Siblings
+The nodes in the node tree have a hierarchical relationship to each other.
+
+The terms parent, child, and sibling are used to describe the relationships. Parent nodes have children. Children on the same level are called siblings (brothers or sisters).
+
+In a node tree, the top node is called the root
+Every node, except the root, has exactly one parent node
+A node can have any number of children
+A leaf is a node with no children
+Siblings are nodes with the same parent
+
+-------------------------------------------------------The nodeType Property
+The nodeType property specifies the type of node.
+
+nodeType is read only.
+
+The most important node types are:
+
+Node type	NodeType
+Element	    1
+Attribute	2
+Text	    3
+Comment	    8
+Document	9
+

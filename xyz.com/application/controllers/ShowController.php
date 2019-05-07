@@ -6,7 +6,7 @@ class ShowController extends Phalcon\Mvc\Controller{
 
         // $this->view->disable();
         // echo json_encode([1, 2, 3]);
-
+        
         $arrinfo = [
             'name'    =>'hong',
             'age'     =>28,
@@ -16,11 +16,10 @@ class ShowController extends Phalcon\Mvc\Controller{
         // echo json_encode($arrinfo);
         // exit();
 
-        header('Content-Type: application/json');
+        //header('Content-Type: application/json');
         return json_encode($arrinfo);
                 
-        // return json_encode($arrinfo);
-       
+            
         //$this->view->setVar('info', $arrinfo_json);
     }
     
