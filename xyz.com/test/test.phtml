@@ -1,0 +1,266 @@
+<?php
+
+//https://www.w3schools.com/php/php_ref_string.asp
+//https://www.w3schools.com/php/php_ref_array.asp
+//https://www.w3schools.com/php/php_ref_filesystem.asp
+
+isset($avariable);
+empty($avariable);
+is_string($avariable);
+is_numeric($avariable);
+is_int($avariable);
+is_integer($avariable);
+is_float($avariable);
+is_double($avariable);
+
+$variable = 'Toidicode.com';
+echo "Website học lập trình online $variable";
+
+echo "<br>";
+
+echo "Anh ấy nói \" Toidicode.com dạy lập trình online!\"";
+
+echo addcslashes("Toidicode.com", 'o');// output: T\oidic\ode.c\om
+
+echo bin2hex("Toidicode"); //ouutput: 546f696469636f6465
+
+echo chop("Vũ Thanh Tài Thanh", "Thanh"); //output: Vũ Thanh Tài
+
+echo crc32("Toidicode.com"); //output: -1511835000
+
+$data = explode('o', "Toidicode.com");
+print_r($data); //output: Array ( [0] => T [1] => idic [2] => de.c [3] => m )
+
+$data = explode('o', "Toidicode.com", 2);
+print_r($data); //output: Array ( [0] => T [1] => idicode.com )
+
+$data = [
+    'Toi',
+    'D',
+    'i',
+    'co',
+    'de',
+    '.com'
+];
+echo implode($data) . "<br>"; //output: Tidicode.com
+echo implode('-', $data); //output: Toi-D-i-co-de-.com
+
+$data = "toidicode.com";
+echo strlen($data); //output: 13
+echo str_word_count($data); //output: 2
+echo str_repeat($data,4); //output: toidicode.comtoidicode.comtoidicode.comtoidicode.com
+echo str_replace("t","T",$data); //output: Toidicode.com
+echo md5($data); //output: d04742d12d431f009e90ef4239e6a782
+echo sha1($data); //output: 49debc628ec279341836be4485897afd5af078ae
+
+$data = "<b>toidicode.com</b>";
+echo htmlentities($data); //output: <b>toidicode.com</b>
+echo htmlspecialchars($data); //output: <b>toidicode.com</b>
+echo strip_tags($data); // output: toidicode.com
+echo strip_tags($data, '<b>'); //output: <b>toidicode.com</b>
+
+echo substr("Hello world", 10) . "<br>"; //d
+echo substr("Hello world", -1) . "<br>"; //d
+echo substr("Hello world", 0, 10) . "<br>"; //Hello worl
+echo substr("Hello world", 0, -1) . "<br>"; //Hello worl
+
+echo strtolower("TOIDICODE.COM"); //output: toidicode.com
+echo strtoupper("toidicode.com"); //output: TOIDICODE.COM
+echo ucwords("vũ thanh tài"); //output: Vũ Thanh Tài
+echo ucfirst("vũ thanh tài"); //output: Vũ thanh tài
+
+echo trim(" vũ thanh tài "); //output: Vũ thanh tài
+echo trim("Vvũ Thanh Tài", 'V'); //output: vũ Thanh Tài
+
+$array=[
+    'toidicode.com',
+    'Website học lập trình online'
+];
+echo count($array); // output: 2
+print_r(array_values($array)); // output: Array ( [0] => toidicode.com [1] => Website học lập trình online )
+print_r(array_keys($array)); // output: Array ( [0] => domain [1] => description )
+print_r(array_pop($array)); // output: Website học lập trình online
+print_r(array_push($array, 'Miễn phí nhé')); // output: 3
+print_r(array_shift($array)); // output: toidicode.com
+print_r(array_unshift($array, "học lập trình")); // output: 3
+print_r(array_flip($array)); // output: Array ( [toidicode.com] => domain [Website học lập trình online] => description )
+
+$array = [5, 4, 3, 2, 1];
+sort($array); //TRUE
+print_r($array); // output: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 )
+print_r(array_reverse($array)); // output: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 )
+
+$array = [
+    'domain' => 'toidicode.com',
+    'description' => 'Website học lập trình online'
+];
+$array1 = [5, 4, 3, 2, 1];
+print_r(array_merge($array, $array1)); // output: Array ( [domain] => toidicode.com [description] => Website học lập trình online [0] => 5 [1] => 4 [2] => 3 [3] => 2 [4] => 1 )
+print_r(array_rand($array)); // output: domain
+print_r(array_rand($array, 2)); //output: Array ( [0] => domain [1] => description )
+print_r(array_search('toidicode.com', $array)); // output: domain
+print_r(array_slice($array, 0)); // output: Array ( [domain] => toidicode.com [description] => Website học lập trình online )
+print_r(array_slice($array, 0, 1)); // output: Array ( [domain] => toidicode.com)
+print_r($a = serialize($array)); // output: a:2:{s:6:"domain";s:13:"toidicode.com";s:11:"description";s:33:"Website học lập trình online";}
+print_r(unserialize($a)); //output: Array ( [domain] => toidicode.com [description] => Website học lập trình online )
+print_r(array_key_exists('domain', $array)); // output: 1
+print_r(in_array('toidicode.com', $array)); // output: 1
+
+$array2 = [
+    'domain' => 'toidicode.com',
+    'descriptions' => 'sWebsite học lập trình online',
+];
+print_r(array_diff($array, $array2)); // output: Array ( [description] => Website học lập trình online )
+print_r(array_diff_assoc($array, $array2)); // output: Array ( [description] => Website học lập trình online )
+print_r(array_intersect($array1, $array2)); // output: Array ( [domain] => toidicode.com )
+print_r(array_intersect_assoc($array1, $array2)); // output: Array ( [domain] => toidicode.com )
+print_r(is_array($array)); // output: 1
+
+
+$array = [
+    'domain' => 'toidicode.com',
+    'description' => 'Website học lập trình online',
+    'description' => 'Website học lập trình online'
+];
+print_r(array_unique($array, 0)); // output: Array ( [domain] => toidicode.com [description] => Website học lập trình online )
+
+////////////////DATE/////////////////////
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+echo strtotime(date('Y-m-d H:i:s')); //output: 1487517353
+
+///////////////////////////////HEADER///////////////////////////
+header('location: http://toidicode.com');
+header("Content-type: application/json");
+
+//////////////////////////////////
+
+// dùng @ để ngăn chặn thông báo lỗi khi sai đường dẫn file
+$file = @fopen('data.txt', 'r');
+
+if (!$file)
+    echo "Mở file không thành công";
+else
+    echo "Mở file thành công";
+
+
+if (!$file)
+    echo "Mở file không thành công";
+else {
+    while (!feof($file)) { // hàm feof sẽ trả về true nếu ở vị trí cuối cùng của file
+        echo fgetc($file);  // đọc ra từng ký tự trong file
+    }
+}
+
+if (!$file)
+    echo "Mở file không thành công";
+else {
+    while (!feof($file)) { // hàm feof sẽ trả về true nếu ở vị trí cuối cùng của file
+        echo fgets($file);  // đọc ra từng dòng trong file
+    }
+}
+
+$data = @file('data.txt'); // chuyển đổi file sang mảng
+foreach ($data as $value) {
+    echo $value;
+}
+
+if (!$file)
+    echo "Mở file không thành công";
+else {
+    echo fread($file, filesize('data.txt'));//filesize lấy ra dung lượng của file
+}
+
+if(file_exists('data.txt'))
+    echo 'file tồn tại';
+else
+    echo 'file không tồn tại';
+
+
+if(is_writable('data.txt'))
+    echo 'Được phép ghi';
+else
+    echo 'không được phép ghi'; 
+    
+    
+echo file_get_contents('data.txt'); //lay noi dung cua file
+rename('data.txt', 'newdata.txt'); 
+copy('data.txt', 'data2.txt');
+if(unlink('data.txt')) //xoa file
+    echo 'Thành công';
+else
+    echo 'Không thành công';
+
+
+mkdir('data.txt'); //tao thu muc
+if(is_dir('public'))
+    echo 'Tồn tại';
+else
+    echo 'Không tồn tại';
+
+
+/////////////////////////
+
+$file = @fopen('data.txt', 'w');
+if (!$file)
+    echo "Mở file không thành công";
+else {
+    $data = 'Tôi ghi dòng này vào file nhé!';
+    fwrite($file, $data);
+    fclose($file); //close file
+}
+
+
+//////////////////////////////////////////////
+//Cũng giống như get và post thì ở đây server nhận dữ liệu file gửi lên bằng biến $_FILES, biến $_FILES này là một mảng 2 chiều có dạng.
+move_uploaded_file(filename, destination);
+
+///////////////////////////////////
+
+// Phương thức GET gửi dữ liệu từ client lên server thông qua các paramter( tham số) trên URL, từ đó server sẽ phân tích dữ liệu để thực thi một hành động nào đó. 
+// Các tham số mà phương thức GET gửi lên sẽ bắt đầu sau dấu ? . Và sẽ nối nhau giữa các khóa thông qua dấu &
+// SERVER nhận dữ liệu
+// http://toidicode.com?age=21&name=VuThanhTai
+// -Để thông báo cho server nhận dữ liệu GET khi có thì chúng ta chỉ cần sử dụng $_GET đây là một biến toàn cục lưu trữ dưới dạng mảng bất tuần tự.
+// VD3: như với URL ở VD2 thì trên server sẽ lưu trữ cho chúng ta như sau:
+
+$_GET = [
+    'age' => 21,
+    'name' => 'VuThanhTai'
+];
+
+if (isset($_GET['name']) && isset($_GET['age'])) {
+    echo 'Tên: ' . $_GET['name'] . '<br>';
+    echo 'Tuổi: ' . $_GET['age'];
+}
+
+?>
+
+<!-- Note!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>upload file- toidicode.com</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileUpload" value="">
+    <input type="submit" name="up" value="Upload">
+</form>
+<?php
+if (isset($_POST['up']) && isset($_FILES['fileUpload'])) {
+    if ($_FILES['fileUpload']['error'] > 0)
+        echo "Upload lỗi rồi!";
+    else {
+        move_uploaded_file($_FILES['fileUpload']['tmp_name'], 'upload/' . $_FILES['fileUpload']['name']);
+        echo "upload thành công <br/>";
+        echo 'Dường dẫn: upload/' . $_FILES['fileUpload']['name'] . '<br>';
+        echo 'Loại file: ' . $_FILES['fileUpload']['type'] . '<br>';
+        echo 'Dung lượng: ' . ((int)$_FILES['fileUpload']['size'] / 1024) . 'KB';
+    }
+}
+?>
+</body>
+</html>

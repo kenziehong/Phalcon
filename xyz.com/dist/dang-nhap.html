@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Fado Login - Register, Front-end Layout</title>
+
+  <!-- ###### CSS ###### -->
+  <link href="css/global.min.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+  <a href=""><img src="images/logo.png" alt=""/></a>
+</header>
+
+<section class="user-block">
+  <div class="block-main">
+    <div class="intro-segment">
+      <div class="title">Quyền lợi thành viên</div>
+      <ul class="list">
+        <li><i class="svg svg-check-circle-grd svg-20px"></i>Mua hàng khắp thế giớ cực dễ dàng, nhanh chóng.</li>
+        <li><i class="svg svg-check-circle-grd svg-20px"></i>Theo dõi đơn hàng hành trình đơn hàng.</li>
+        <li><i class="svg svg-check-circle-grd svg-20px"></i>Nhận nhiều ưu đãi hấp dẫn từ khắp thế giới.</li>
+      </ul>
+    </div><!-- .intro-segment -->
+
+    <div class="user-segment">
+      <div class="segment-head">
+        <a class="title-tab is-active" href="dang-nhap.html">Đăng nhập</a>
+        <a class="title-tab" href="dang-ky.html">Đăng ký</a>
+      </div><!-- .segment-head -->
+
+      <div class="segment-main">
+        <form class="login-form theme-form">
+          <div class="form-group border-group">
+            <div class="group-inner error">
+              <div class="icon"><i class="fd email"></i></div>
+              <input type="email" class="form-control error" placeholder="Địa chỉ email của bạn"/>
+              <div class="border"></div>
+            </div>
+            <label class="error">Bạn vui lòng nhập địa chỉ email.</label>
+          </div><!-- .form-group -->
+
+          <div class="form-group border-group">
+            <div class="group-inner">
+              <div class="icon"><i class="fd key"></i></div>
+              <input type="password" class="form-control" placeholder="Vui lòng nhập mật khẩu"/>
+              <div class="border"></div>
+            </div>
+          </div><!-- .form-group -->
+
+          <div class="request-pass-field">
+            <a href="#" data-toggle="modal" data-target=".request-pass-modal">Quên mật khẩu ?</a>
+          </div>
+
+          <div class="btn-wrap">
+            <button class="submit-btn btn btn-pill btn-grd-bg" disabled>Đăng nhập</button>
+          </div>
+
+          <div class="login-width-field">
+            <div class="field-title"><span>Hoặc đăng nhập qua</span></div>
+            
+            <div class="row">
+              <div class="col-xs-6">
+                <a class="social-btn fb" href="#"><i class="fa fa-facebook-f" aria-hidden="true"></i> Facebook</a>
+              </div>
+
+              <div class="col-xs-6">
+                <a class="social-btn gp" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a>
+              </div>
+            </div>
+          </div><!-- .login-width-field -->
+
+          <div class="register-field">
+            Bạn chưa có tài khoản <a href="dang-ky.html">Đăng ký ngay</a>
+          </div>
+        </form><!-- .login-form -->
+      </div><!-- .segment-main -->
+    </div><!-- .user-segment -->
+  </div><!-- .block-main -->
+</section><!-- .user-block -->
+
+
+<div class="modal request-pass-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Lấy lại mật khẩu</h4>
+      </div>
+      <div class="modal-body">
+        <form class="request-pass-form">
+          <div class="form-group border-group">
+            <div class="group-inner">
+              <div class="icon"><i class="fd email"></i></div>
+              <input type="email" class="form-control" placeholder="Vui lòng điền địa chỉ Email"/>
+              <div class="border"></div>
+            </div>
+          </div><!-- .form-group -->
+
+          <div class="form-group border-group captcha-group">
+            <div class="group-inner">
+              <div class="captcha-img"><img src="images/upload/captcha.png" alt=""/></div>
+              <input type="text" class="form-control" placeholder="Điền mã xác nhận"/>
+              <div class="border"></div>
+            </div>
+          </div><!-- .form-group -->
+
+          <div class="btn-wrap">
+            <button class="submit-btn btn btn-pill btn-lg btn-main-color">Xác nhận</button>
+          </div>
+        </form><!-- .request-pass-form -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal finish-request-pass-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Email thay đổi mật khẩu vừa được gửi đi</h4>
+      </div>
+      <div class="modal-body">
+        <div class="intro-pane">
+          <div class="text">
+            Vui lòng tuần tự làm theo các bước hướng dẫn sau để thay đổi mật khẩu của bạn tại website Fado.vn
+          </div>
+        </div>
+
+        <div class="step-pane-wrap">
+          <div class="step-pane">
+            <div class="img-col"><span><i class="fd email60-white"></i></span></div>
+            <div class="info-col">
+              <div class="title">Bước 1:</div>
+              <div class="desc">Mở Email trong hộp thư đến (Inbox)</div>
+            </div>
+          </div>
+
+          <div class="step-pane">
+            <div class="img-col"><span><i class="fd link60-white"></i></span></div>
+            <div class="info-col">
+              <div class="title">Bước 2:</div>
+              <div class="desc">Nhấp chọn vào đường dẫn trong Email</div>
+            </div>
+          </div>
+
+          <div class="step-pane">
+            <div class="img-col"><span><i class="fd lock60-white"></i></span></div>
+            <div class="info-col">
+              <div class="title">Bước 3:</div>
+              <div class="desc">Tiếp tục thay đổi mật khẩu tại website Fado.vn</div>
+            </div>
+          </div>
+        </div><!-- .step-pane-wrap -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<footer>
+  <div class="container">
+    <div class="copyright-segment">
+      Copyright © 2017 Fado.vn<br/>
+      Đơn vị chủ quản: <span>CÔNG TY CỔ PHẦN FADO VIỆT NAM</span>
+    </div>
+
+    <nav class="menu-page-nav">
+      <ul class="lv1-ul">
+        <li><a href="#" target="_blank">Hỏi đáp</a></li>
+        <li class="line">/</li>
+        <li><a href="#" target="_blank">Hướng dẫn</a></li>
+        <li class="line">/</li>
+        <li><a href="#" target="_blank">Hỗ trợ</a></li>
+      </ul>
+    </nav>
+  </div><!-- .container -->
+</footer>
+
+<!-- ###### Import JS File ###### -->
+<script src="js/libs/libs.min.js"></script>
+<script src="js/libs/modules.min.js"></script>
+
+<!-- Partials -->
+<script src="js/partials/"></script>
+
+<!-- main -->
+<script src="js/main.js"></script>
+</body>
+</html>

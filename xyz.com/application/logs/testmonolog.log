@@ -1,0 +1,5 @@
+[2019-05-10 09:54:08] my_logger.INFO: My logger is now ready [] []
+[2019-05-10 09:59:41] my_logger.INFO: My logger is now ready [] []
+[2019-05-10 09:59:41] my_logger.INFO: Adding a new user {"username":"Seldaek"} []
+[2019-05-10 10:09:00] my_logger.INFO: My logger is now ready [] {"dummy":"Hello world!"}
+[2019-05-10 10:09:00] my_logger.INFO: Adding a new user {"username":"Seldaek"} {"dummy":"Hello world!"}

@@ -1,0 +1,27 @@
+<h3>aaaa</h3>
+
+<?php
+//use Phalcon\Di\Exception;
+
+// if (isset($keycontrollerview)) {
+//     echo $keycontrollerview;
+// }else{
+//     die("Variable not found");
+// }
+
+//error handler function
+function customError($errno, $errstr) {
+  echo "<b>Error:</b> [$errno] $errstr";
+}
+
+//set error handler
+set_error_handler("customError");
+
+//trigger error
+echo $keycontrollerview;
+
+
+echo "<pre>";
+    print_r($keycontrollerview1);
+echo "</pre>";
+?>

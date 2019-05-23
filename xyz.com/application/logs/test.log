@@ -1,0 +1,11 @@
+[Fri, 10 May 19 04:53:44 +0000][CRITICAL] This is a critical message
+[Fri, 10 May 19 04:53:44 +0000][EMERGENCY] This is an emergency message
+[Fri, 10 May 19 04:53:44 +0000][DEBUG] This is a debug message
+[Fri, 10 May 19 04:53:44 +0000][ERROR] This is an error message
+[Fri, 10 May 19 04:53:44 +0000][INFO] This is an info message
+[Fri, 10 May 19 04:53:44 +0000][NOTICE] This is a notice message
+[Fri, 10 May 19 04:53:44 +0000][WARNING] This is a warning message
+[Fri, 10 May 19 04:53:44 +0000][ALERT] This is an alert message
+[Fri, 10 May 19 04:53:44 +0000][ERROR] This is another error message
+[Fri, 10 May 19 04:53:44 +0000][DEBUG] This is a message
+[Fri, 10 May 19 04:53:44 +0000][EMERGENCY] Array
